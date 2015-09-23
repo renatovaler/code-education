@@ -23,8 +23,8 @@ Route::group(['prefix'=> 'client', 'except' => ['create', 'edit']], function() {
 Route::group(['prefix'=> 'project', 'except' => ['create', 'edit']], function() {
 
     Route::get('{id}/members', ['as' => 'project_members', 'uses' => 'ProjectMemberController@members']);
-    Route::post('{id}/members', ['as' => 'projectmembers.add', 'uses' => 'ProjectMemberController@store']);
-    Route::delete('{id}/members/{memberId}', ['as' => 'project_members.remove', 'uses' => 'ProjectMemberController@destroy']);
+    Route::post('{id}/members', ['as' => 'projectmembers.add', 'uses' => 'ProjectMemberController@add']);
+    Route::delete('{id}/members/{memberId}', ['as' => 'project_members.remove', 'uses' => 'ProjectMemberController@remove']);
 
     Route::get('{id}/note', ['as' => 'project_note', 'uses' => 'ProjectNoteController@index']);
     Route::post('{id}/note', ['as' => 'project_note.store', 'uses' => 'ProjectNoteController@store']);
