@@ -15,6 +15,11 @@ class ProjectMember extends Model implements Transformable
     use TransformableTrait;
 
     /**
+     * @var string
+     */
+    protected $table = 'project_members';
+
+    /**
      * @var array
      */
     protected $fillable = [

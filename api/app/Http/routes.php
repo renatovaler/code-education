@@ -11,6 +11,10 @@
 |
 */
 
+Route::post('oauth/access_token', function() {
+    return Response::json(Authorizer::issueAccessToken());
+});
+
 Route::group(['prefix'=> 'client', 'except' => ['create', 'edit']], function() {
     Route::get('', ['as' => 'client', 'uses' => 'ClientController@index']);
     Route::post('', ['as' => 'client.store', 'uses' => 'ClientController@store']);

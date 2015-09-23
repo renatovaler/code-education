@@ -47,5 +47,9 @@ class RepositoryServiceProvider extends ServiceProvider
             \CodeProject\Repositories\ProjectMemberRepository::class,
             \CodeProject\Repositories\ProjectMemberRepositoryEloquent::class
         );
+        $this->app->bind(
+            \CodeProject\Repositories\OAuth2Repository::class,
+            \CodeProject\Repositories\OAuth2RepositoryEloquent::class
+        );
     }
 }

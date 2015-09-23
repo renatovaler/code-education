@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 use CodeProject\Http\Requests;
 
+/**
+ * Class ProjectMemberController
+ * @package CodeProject\Http\Controllers
+ */
 class ProjectMemberController extends Controller
 {
     /**
@@ -62,6 +66,11 @@ class ProjectMemberController extends Controller
         return $this->service->remove($projectId, $memberId);
     }
 
+    /**
+     * @param $projectId
+     * @param $memberId
+     * @return bool
+     */
     public function isMember($projectId, $memberId)
     {
         return (bool)$this->service->isMember($projectId, $memberId);

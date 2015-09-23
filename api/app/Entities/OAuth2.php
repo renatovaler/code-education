@@ -7,33 +7,30 @@ use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
 
 /**
- * Class ProjectNote
+ * Class OAuth2
  * @package CodeProject\Entities
  */
-class ProjectNote extends Model implements Transformable
+class OAuth2 extends Model implements Transformable
 {
     use TransformableTrait;
 
     /**
      * @var string
      */
-    protected $table = 'project_notes';
+    protected $table = 'oauth_clients';
 
     /**
      * @var array
      */
     protected $fillable = [
-        'project_id',
-        'title',
-        'note'
+        'id',
+        'secret',
+        'name'
     ];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @var array
      */
-    public function project()
-    {
-        return $this->belongsTo(Project::class);
-    }
+    protected $hidden = ['id'];
 
 }
