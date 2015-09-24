@@ -116,7 +116,7 @@ class OAuth2Service {
     /**
      * @param $username
      * @param $password
-     * @return bool
+     * @return bool or user id
      */
     public function authenticate($username, $password)
     {

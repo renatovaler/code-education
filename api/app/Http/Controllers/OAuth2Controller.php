@@ -67,21 +67,21 @@ class OAuth2Controller extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  string  $clientId
      * @return Response
      */
-    public function show($id)
+    public function show($clientId)
     {
-        return $this->service->show($id);
+        return $this->service->show($clientId);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  string  $clientId
      * @return Response
      */
-    public function edit($id)
+    public function edit($clientId)
     {
         // edit desnecessário, pois o formulário será gerado pelo template em AngularJS
     }
@@ -90,23 +90,23 @@ class OAuth2Controller extends Controller
      * Update the specified resource in storage.
      *
      * @param  Request  $request
-     * @param  int  $id
+     * @param  string  $clientId
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $clientId)
     {
-        return $this->service->update($request->all(), $id);
+        return $this->service->update($request->all(), $clientId);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  string  $clientId
      * @return Response
      */
-    public function destroy($id)
+    public function destroy($clientId)
     {
-        return $this->service->destroy($id);
+        return $this->service->destroy($clientId);
     }
 
 }
