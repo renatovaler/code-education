@@ -12,10 +12,10 @@ use Prettus\Validator\LaravelValidator;
 use Prettus\Validator\Contracts\ValidatorInterface;
 
 /**
- * Class ProjectValidator
- * @package CodeProject\Validators
+ * Class OAuth2Validator
+ * @package CodeOAuth2\Validators
  */
-class ProjectValidator extends LaravelValidator implements ValidatorInterface
+class OAuth2Validator extends LaravelValidator implements ValidatorInterface
 {
 
     /**

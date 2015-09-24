@@ -12,10 +12,18 @@
 */
 
 $factory->define(CodeProject\Entities\User::class, function (Faker\Generator $faker) {
+    /*
     return [
         'name' => $faker->name,
         'email' => $faker->email,
         'password' => bcrypt(str_random(10)),
+        'remember_token' => str_random(10),
+    ];
+    */
+    return [
+        'name' => 'Renato',
+        'email' => 'renato.valer@hotmail.com',
+        'password' => bcrypt(12345),
         'remember_token' => str_random(10),
     ];
 });
@@ -63,5 +71,12 @@ $factory->define(CodeProject\Entities\ProjectMember::class, function (Faker\Gene
     return [
         'project_id' => \CodeProject\Entities\Project::orderByRaw("RAND()")->first()->getKey(),
         'user_id' => \CodeProject\Entities\User::orderByRaw("RAND()")->first()->getKey()
+    ];
+});
+$factory->define(CodeProject\Entities\OAuth2::class, function (Faker\Generator $faker) {
+    return [
+        'id' => md5(rand(10000, 999999)),
+        'name' => md5(rand(10000, 999999)),
+        'secret' => md5(rand(10000, 999999))
     ];
 });

@@ -31,6 +31,6 @@ class OAuth2 extends Model implements Transformable
     /**
      * @var array
      */
-    protected $hidden = ['id'];
+    //protected $hidden = ['id'];
 
 }
