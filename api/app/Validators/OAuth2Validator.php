@@ -23,11 +23,12 @@ class OAuth2Validator extends LaravelValidator implements ValidatorInterface
      */
     protected $rules = [
         ValidatorInterface::RULE_CREATE => [
+            'id' => 'required|max:40',
             'name' => 'required|max:255',
             'secret' => 'required|max:40',
         ],
         ValidatorInterface::RULE_UPDATE => [
-            'id' => 'required|numeric',
+            'id' => 'required|max:40',
             'name' => 'required|max:255',
             'secret' => 'required|max:40'
         ],
